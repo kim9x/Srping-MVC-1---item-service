@@ -86,6 +86,16 @@ public class BasicItemController {
 
 //		model.addAttribute("item", item); // 자동 추가, 생략 가능
 
+		return "basic/item";
+	}
+	
+	@PostMapping("/add")
+	public String addItemV5(Item item) {
+
+		itemRepository.save(item);
+
+//		model.addAttribute("item", item); // 자동 추가, 생략 가능
+
 		return "redirect:/basic/items/" + item.getId();
 	}
 
