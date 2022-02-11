@@ -26,7 +26,7 @@ class ItemRepositoryTest {
 		Item saveItem = itemRepository.save(item);
 		
 		// then
-		Item findItem = itemRepository.findbyId(item.getId());
+		Item findItem = itemRepository.findById(item.getId());
 		assertThat(findItem).isEqualTo(saveItem);
 	}
 	
@@ -60,7 +60,7 @@ class ItemRepositoryTest {
 		itemRepository.update(itemId, updateParam);
 		
 		// then
-		Item findItem = itemRepository.findbyId(itemId);
+		Item findItem = itemRepository.findById(itemId);
 		
 		assertThat(findItem.getItemName()).isEqualTo(updateParam.getItemName());
 		assertThat(findItem.getPrice()).isEqualTo(updateParam.getPrice());
