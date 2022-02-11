@@ -86,7 +86,7 @@ public class BasicItemController {
 
 //		model.addAttribute("item", item); // 자동 추가, 생략 가능
 
-		return "basic/item";
+		return "redirect:/basic/items/" + item.getId();
 	}
 
 	@GetMapping("/{itemId}/edit")
